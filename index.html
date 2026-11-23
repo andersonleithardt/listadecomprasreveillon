@@ -216,7 +216,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         <p class="text-xs sm:text-sm text-brand-900 leading-relaxed">
-          Os itens aqui estão <strong>reservados</strong> para você. Outros participantes veem um alerta de reserva, mas o saldo só é baixado quando você clicar em <strong>Confirmar Compra</strong>.
+          Os itens aqui ainda não constam como comprados, apenas reservados. Outros compradores veem um alerta de reserva, mas o saldo só é baixado da lista A Comprar quando você clicar em Confirmar Compra.
         </p>
       </div>
 
@@ -316,18 +316,18 @@
         Escolha quem está comprando agora para sincronizar o carrinho e registrar suas compras. A seleção é obrigatória a cada entrada.
       </p>
 
-      <div id="identity-options" class="mt-4 grid grid-cols-2 gap-2">
-        <button type="button" data-identity-name="Ana" class="identity-option-btn py-2.5 px-3 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition">Ana</button>
-        <button type="button" data-identity-name="Ander" class="identity-option-btn py-2.5 px-3 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition">Ander</button>
-        <button type="button" data-identity-name="Cris" class="identity-option-btn py-2.5 px-3 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition">Cris</button>
-        <button type="button" data-identity-name="Everton" class="identity-option-btn py-2.5 px-3 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition">Everton</button>
-        <button type="button" data-identity-name="Joyce" class="identity-option-btn py-2.5 px-3 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition">Joyce</button>
-        <button type="button" data-identity-name="Júnior" class="identity-option-btn py-2.5 px-3 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition">Júnior</button>
-        <button type="button" data-identity-name="Sidney" class="identity-option-btn col-span-2 py-2.5 px-3 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition">Sidney</button>
+      <div id="identity-options" class="mt-4 grid grid-cols-1 gap-2">
+        <button type="button" data-identity-name="Ana" class="identity-option-btn w-full h-11 px-4 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition flex items-center justify-center">Ana</button>
+        <button type="button" data-identity-name="Ander" class="identity-option-btn w-full h-11 px-4 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition flex items-center justify-center">Ander</button>
+        <button type="button" data-identity-name="Cris" class="identity-option-btn w-full h-11 px-4 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition flex items-center justify-center">Cris</button>
+        <button type="button" data-identity-name="Everton" class="identity-option-btn w-full h-11 px-4 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition flex items-center justify-center">Everton</button>
+        <button type="button" data-identity-name="Joyce" class="identity-option-btn w-full h-11 px-4 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition flex items-center justify-center">Joyce</button>
+        <button type="button" data-identity-name="Júnior" class="identity-option-btn w-full h-11 px-4 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition flex items-center justify-center">Júnior</button>
+        <button type="button" data-identity-name="Sidney" class="identity-option-btn w-full h-11 px-4 rounded-xl border border-slate-300 bg-white hover:border-brand-500 hover:bg-brand-50/50 font-bold text-sm text-slate-800 transition flex items-center justify-center">Sidney</button>
       </div>
 
       <button id="btn-confirm-identity" type="button" disabled class="mt-4 w-full py-3 px-4 rounded-xl bg-brand-600 hover:bg-brand-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-extrabold text-sm shadow-sm transition">
-        Confirmar Quem Está Comprando
+        Iniciar compras
       </button>
     </div>
   </div>
@@ -390,6 +390,7 @@
       { name: "Bolacha de maisena", unit: "pacote", qty: 1 },
       { name: "Bolacha salgada", unit: "pacote", qty: 1 },
       { name: "Bolo de caixinha", unit: "unidade", qty: 4 },
+      { name: "Café", unit: "500g", qty: 1 },
       { name: "Carne moída", unit: "kg", qty: 2 },
       { name: "Carne vermelha", unit: "kg", qty: 6 },
       { name: "Carvão", unit: "kg", qty: 14 },
@@ -401,25 +402,24 @@
       { name: "Leite condensado", unit: "unidade", qty: 8 },
       { name: "Linguiça", unit: "kg", qty: 3 },
       { name: "Macarrão", unit: "pacote", qty: 3 },
-      { name: "Maguary de maracujá", unit: "unidade", qty: 1 },
-      { name: "Maionese Hellmann's", unit: "unidade", qty: 2 },
+      { name: "Maionese Hellman's", unit: "unidade", qty: 2 },
       { name: "Margarina", unit: "pote", qty: 1 },
       { name: "Milho", unit: "lata", qty: 4 },
       { name: "Molho de tomate", unit: "unidade", qty: 10 },
       { name: "Mortadela", unit: "kg", qty: 1 },
       { name: "Mostarda", unit: "unidade", qty: 1 },
       { name: "Pão de alho", unit: "bandeja", qty: 4 },
-      { name: "Pão de cachorro-quente", unit: "unidade", qty: 20 },
-      { name: "Pão de hambúrguer", unit: "unidade", qty: 20 },
+      { name: "Pão de cahorro-quente", unit: "unidade", qty: 20 },
+      { name: "Pão de hamburguer", unit: "unidade", qty: 20 },
       { name: "Pão fatiado", unit: "pacote", qty: 12 },
       { name: "Pão francês", unit: "unidade", qty: 20 },
       { name: "Papel higiênico", unit: "pacote", qty: 1 },
       { name: "Peito de frango", unit: "kg", qty: 3 },
-      { name: "Café", unit: "500g", qty: 1 },
       { name: "Presunto", unit: "fatia", qty: 20 },
       { name: "Queijo", unit: "fatia", qty: 20 },
-      { name: "Sal", unit: "kg", qty: 1 },
       { name: "Sal grosso", unit: "kg", qty: 1 },
+      { name: "Sal refinado", unit: "kg", qty: 1 },
+      { name: "Suco Maguary (maracujá)", unit: "unidade", qty: 1 },
       { name: "Tomate", unit: "kg", qty: 1 },
       { name: "Vina", unit: "pacote grande", qty: 1 }
     ];
@@ -1445,33 +1445,69 @@
     }
 
     function updateProgressAndTotals() {
-      // Calcula o progresso real baseado nas quantidades que já foram para "Comprados" em relação ao total necessário
-      const totalNeededUnits = state.items.reduce((acc, it) => acc + Math.max(0, Number(it.neededQty) || 0), 0);
-      const totalBoughtUnits = state.items.reduce((acc, it) => {
+      // Calcula o progresso real baseado nas quantidades efetivamente registradas na lista "Comprados"
+      const boughtByItem = new Map();
+      state.boughtHistory.forEach((entry) => {
+        if (!entry || !entry.itemId) return;
+        const q = Math.max(0, Number(entry.qty) || 0);
+        boughtByItem.set(entry.itemId, (boughtByItem.get(entry.itemId) || 0) + q);
+      });
+
+      let totalNeededUnits = 0;
+      let totalBoughtUnits = 0;
+      let completedItemsCount = 0;
+
+      state.items.forEach((it) => {
         const needed = Math.max(0, Number(it.neededQty) || 0);
         const remaining = Math.max(0, Number(it.remainingQty) || 0);
-        return acc + Math.max(0, needed - remaining);
-      }, 0);
+        const historyBought = boughtByItem.get(it.id) || 0;
+        const boughtForThisItem = Math.max(historyBought, Math.max(0, needed - remaining));
+        const effectiveTotalForItem = Math.max(needed, boughtForThisItem);
 
-      const completedItemsCount = state.items.filter((it) => Number(it.remainingQty) <= 0).length;
+        totalNeededUnits += effectiveTotalForItem;
+        totalBoughtUnits += boughtForThisItem;
+        if (remaining <= 0) {
+          completedItemsCount++;
+        }
+      });
+
+      // Inclui também eventuais registros de Comprados de itens avulsos que não estejam mais no array base
+      state.boughtHistory.forEach((entry) => {
+        if (!entry || !entry.itemId) return;
+        const existsInItems = state.items.some((it) => it.id === entry.itemId);
+        if (!existsInItems) {
+          const q = Math.max(0, Number(entry.qty) || 0);
+          totalNeededUnits += q;
+          totalBoughtUnits += q;
+        }
+      });
+
       const totalItemsCount = state.items.length || INITIAL_SHOPPING_ITEMS.length;
 
-      const pct = totalNeededUnits > 0
-        ? Math.min(100, Math.round((totalBoughtUnits / totalNeededUnits) * 100))
+      const rawPct = totalNeededUnits > 0
+        ? Math.min(100, Math.max(0, (totalBoughtUnits / totalNeededUnits) * 100))
         : 0;
+
+      const pctLabel = rawPct === 0
+        ? "0%"
+        : (rawPct < 1
+            ? `${rawPct.toFixed(2).replace(".", ",")}%`
+            : (Number.isInteger(rawPct) ? `${rawPct}%` : `${rawPct.toFixed(1).replace(".", ",")}%`));
+
+      const barWidthPct = rawPct > 0 ? Math.max(rawPct, 1.5) : 0;
 
       const globalText = document.getElementById("global-progress-text");
       const globalBar = document.getElementById("global-progress-bar");
       if (globalText) {
-        globalText.textContent = `${completedItemsCount}/${totalItemsCount} itens • ${pct}% comprado`;
+        globalText.textContent = `${completedItemsCount}/${totalItemsCount} itens • ${pctLabel} comprado`;
       }
-      if (globalBar) globalBar.style.width = `${pct}%`;
+      if (globalBar) globalBar.style.width = `${barWidthPct}%`;
 
       const boughtBadge = document.getElementById("bought-summary-badge");
       const boughtBar = document.getElementById("bought-progress-bar");
       const boughtSub = document.getElementById("bought-summary-sub");
-      if (boughtBadge) boughtBadge.textContent = `${pct}% concluído`;
-      if (boughtBar) boughtBar.style.width = `${pct}%`;
+      if (boughtBadge) boughtBadge.textContent = `${pctLabel} concluído`;
+      if (boughtBar) boughtBar.style.width = `${barWidthPct}%`;
       if (boughtSub) {
         boughtSub.textContent =
           totalBoughtUnits === 0
@@ -1619,7 +1655,7 @@
                       <span class="pointer-events-none">+${formatQty(pickerQty)}</span>
                     </button>
                   `
-                    : `<span class="text-xs font-bold text-emerald-700">✓ Todo o saldo disponível já está no seu carrinho</span>`
+                    : `<span class="text-xs font-bold text-emerald-700">✓ O total deste item foi incluído em seu carrinho</span>`
                 }
               </div>
             </article>
