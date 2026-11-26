@@ -1349,14 +1349,6 @@
         return false;
       }
 
-      const authorized = await openCustomModal({
-        title: "Autorização Necessária",
-        message: "Informe o código de administração para incluir um novo item na lista compartilhada.",
-        confirmText: "Autorizar",
-        requirePassword: true
-      });
-      if (!authorized) return false;
-
       const match = qtyStr.match(/^(\d+(?:[.,]\d+)?)\s*(.*)$/);
       let parsedQty = 1;
       let parsedUnit = "unidade";
