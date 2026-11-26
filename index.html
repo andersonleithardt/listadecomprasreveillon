@@ -1374,7 +1374,10 @@
       };
 
       const snapshot = getCurrentPayloadSnapshot();
-      snapshot.items.unshift(newItem);
+      snapshot.items.push(newItem);
+      snapshot.items.sort((a, b) =>
+        String(a.name || "").localeCompare(String(b.name || ""), "pt-BR", { sensitivity: "base" })
+      );
       snapshot.updatedAt = now;
       writeLocalSessionPayload(snapshot, state.sessionId, true);
 
@@ -1531,11 +1534,11 @@
     function renderTodoList() {
       const container = document.getElementById("todo-list-container");
       const emptyState = document.getElementById("todo-empty-state");
-      const emptyTitle = document.getElementById("todo-empty-title");
-      const emptyDesc = document.getElementById("todo-empty-desc");
-      if (!container) return;
-
-      const pendingItems = state.items.filter((it) => Number(it.remainingQty) > 0);
+      const pendingItems = state.items
+        .filter((it) => Number(it.remainingQty) > 0)
+        .sort((a, b) =>
+          String(a.name || "").localeCompare(String(b.name || ""), "pt-BR", { sensitivity: "base" })
+        );
       const badgeTodo = document.getElementById("badge-todo");
       if (badgeTodo) badgeTodo.textContent = String(pendingItems.length);
 
